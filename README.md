@@ -1,16 +1,14 @@
-# Image Filtering Using Data-Level Parallelism
+# Image Filtering using data level parallelism
 
-**Group 1 Members**
+**Group 1’s Members:**
 - Catapang, Nathan James
 - Garzon, Harris Martin
 - Ruiz, Joseph Benjamin
 - Tamayo, Chelsea Nichole
 
----
-
 ## I. Abstract
 
-Image filtering is a common operation in image processing and within the field of technology. Yet, it is not limited to just technology. Medical and industrial fields utilize this feature to reduce noise within images, clear and smooth out surroundings, and enhance visuals to perform optimally. However, applying filters to high-resolution images can involve substantial computational work due to the high amount of pixels needed to be processed. This process is usually done one at a time through sequential implementation, increasing the processing time as image resolution grows. This project aims to investigate the use of data-level parallelism to improve the performance of image filtering. The project will implement Sobel edge detection, using both sequential and parallel algorithms. The performance of both implementations will be evaluated using images with different resolutions, with execution time serving as the primary metric.
+Image filtering is a common operation in image processing and within the field of technology. Yet, it is not limited to just technology. Medical and industrial fields utilize this feature to reduce noise within images, clear and smooth out surroundings, and enhance visuals to perform optimally. However, applying filters to high-resolution images can involve substantial computational work due to the high amount of pixels needed to be processed. This process is usually done one at a time through sequential implementation, increasing the processing time as image resolution grows. This project aims to investigate the use of data-level parallelism to improve the performance of image filtering. The project will implement Sobel edge detection, using both sequential and parallel algorithms. The performance of both implementations will be evaluated using images with different resolutions, with execution time serving as the primary metrics.
 
 ## II. Proposed Project Description
 
@@ -22,15 +20,9 @@ Each pixel will be represented by an 8-bit unsigned integer with an intensity va
 
 ### B. Proposed Process
 
-The project will focus on implementing the Sobel edge detection algorithm to identify the edges and boundaries within digital images. Firstly, the input image will be converted into grayscale to simplify the process by representing each pixel using a single intensity value instead of separate red, green and blue values. This helps the Sobel algorithm detect changes in pixel intensity more efficiently and make the edge detection process more straightforward. Afterwards, the algorithm will be applied to calculate the horizontal and vertical intensity gradients of each pixel using two 3×3 convolution kernels. These gradients will be combined using the gradient magnitude formula:
+The project will focus on implementing the Sobel edge detection algorithm to identify the edges and boundaries within digital images. Firstly, the input image will be converted into grayscale to simplify the process by representing each pixel using a single intensity value instead of separate red, green and blue values. This helps the sobel algorithm detect changes in pixel intensity more efficiently and make the edge detection process more straightforward. Afterwards, the algorithm will be applied to calculate the horizontal and vertical intensity gradients of each pixel using two (3x3) convolution kernels. These gradients will be combined using the gradient magnitude formula, G = sqrt{(GX^2 + GY^2)}, to determine the strength of the edges in the image. Pixels with larger gradient magnitudes will indicate more prominent edges, which will be highlighted in the resulting output image.
 
-$$
-G = \sqrt{G_x^2 + G_y^2}
-$$
-
-This determines the strength of the edges in the image. Pixels with larger gradient magnitudes will indicate more prominent edges, which will be highlighted in the resulting output image.
-
-To evaluate the benefits of data-level parallelism, the project will implement both sequential and parallel versions of the Sobel algorithm. The sequential implementation will serve as the baseline, processing the image pixel by pixel, while the parallel implementation will use AVX2 assembly instructions to process multiple pixels simultaneously. Jain et al. (2016) investigated parallel Sobel edge detection using CUDA C and compared its performance with sequential execution. Although their implementation uses GPU-based parallelism, our project will explore CPU-based SIMD parallelism using AVX2. Their research provides a reference for investigating parallel Sobel processing but does not establish the performance improvement AVX2 will achieve. Both implementations will use the same input images to ensure fair comparison. Their execution times will be measured, and speedup will be calculated by dividing the sequential execution time by the parallel execution time across different image resolutions to evaluate performance.
+To evaluate the benefits of data-level parallelism, the project will implement both sequential and parallel versions of the Sobel algorithm. The sequential implementation will serve as the baseline, processing the image pixel by pixel, while the parallel implementation will use AVX2 assembly instructions to process multiple pixels simultaneously. Research done by Jain et al. (2016), who investigated parallel Sobel edge detection using CUDA C and compared its performance with sequential execution. Although their implementation uses GPU-based parallelism, our project will explore CPU-based SIMD parallelism using AVX2. Their research provides reference for investigating parallel Sobel processing but does not establish the performance improvement AVX2 will achieve. Both implementations will use the same input images to ensure fair comparison. Their execution times will be measured and speedup will be calculated by dividing the sequential execution time by the parallel execution time across different image resolutions to evaluate performance.
 
 ### C. Outputs
 
@@ -52,4 +44,4 @@ By week 10, the sequential C implementation and an initial version of the AVX2 a
 
 Jain, A., Namdev, A., & Chawla, M. (2016). Parallel edge detection by SOBEL algorithm using CUDA C. *IEEE Students Conference on Electrical, Electronics and Computer Science*, 1–6. https://doi.org/10.1109/sceecs.2016.7509360
 
-Moukthika. (2025, May 6). *Edge detection using OpenCV*. OpenCV. https://opencv.org/edge-detection-using-opencv/
+Moukthika. (2025, May 6). Edge detection using OpenCV. OpenCV. https://opencv.org/edge-detection-using-opencv/
