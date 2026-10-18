@@ -45,3 +45,5 @@ By week 10, the sequential C implementation and an initial version of the AVX2 a
 Jain, A., Namdev, A., & Chawla, M. (2016). Parallel edge detection by SOBEL algorithm using CUDA C. *IEEE Students Conference on Electrical, Electronics and Computer Science*, 1–6. https://doi.org/10.1109/sceecs.2016.7509360
 
 Moukthika. (2025, May 6). Edge detection using OpenCV. OpenCV. https://opencv.org/edge-detection-using-opencv/
+
+Video link: https://drive.google.com/drive/folders/1mfhHtx5UtS8-gigl6woks9RYltI3uR_T?usp=sharing
