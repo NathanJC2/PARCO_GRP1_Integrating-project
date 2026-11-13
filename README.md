@@ -23,17 +23,23 @@ The mid-project milestone focuses on implementing the three versions of the Sobe
 ## Compilation and Execution
 
 ### Sequential C
-> gcc -Wall -std=c99 -O3 -fno-tree-vectorize -fno-tree-slp-vectorize Sequential_C_version.c -o sequential.exe -lm
-> .\sequential.exe
+```
+gcc -Wall -std=c99 -O3 -fno-tree-vectorize -fno-tree-slp-vectorize Sequential_C_version.c -o sequential.exe -lm
+.\sequential.exe
+```
 
 ### Auto-Vectorized C
-> gcc -Wall -std=c99 -O3 -march=native -ftree-vectorize "-fopt-info-vec-all=vectorization.txt" AutoVectorized_C_version.c -o autovectorized.exe -lm
-> .\autovectorized.exe
+```
+gcc -Wall -std=c99 -O3 -march=native -ftree-vectorize "-fopt-info-vec-all=vectorization.txt" AutoVectorized_C_version.c -o autovectorized.exe -lm
+.\autovectorized.exe
+```
 
 ### AVX2 Assembly
-> nasm -f win64 AVX2_Assembly_version.asm -o AVX2_Assembly_version.obj
-> gcc -Wall -std=c99 -O3 AVX2_C_driver.c AVX2_Assembly_version.obj -o avx2.exe -lm
-> .\avx2.exe images\sample.pgm results\sample_avx2.pgm
+```
+nasm -f win64 AVX2_Assembly_version.asm -o AVX2_Assembly_version.obj
+gcc -Wall -std=c99 -O3 AVX2_C_driver.c AVX2_Assembly_version.obj -o avx2.exe -lm
+.\avx2.exe images\sample.pgm results\sample_avx2.pgm
+```
 
 ## I. Abstract
 <p align="justify">
