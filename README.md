@@ -10,12 +10,12 @@ Video link: https://drive.google.com/drive/folders/1mfhHtx5UtS8-gigl6woks9RYltI3
 
 ## Mid-Project Milestone
 <p align="justify">
-The mid-project milestone focuses on implementing the three versions of the Sobel Edge Detection algorithm and conducting initial tests to check their correctness and performance. The implementations include Sequential C, Auto-Vectorized C, and AVX2 Assembly. The output images are compared pixel by pixel to check if the three implementations produce correct and comparable results. Preliminary execution-time measurements are also collected to assess their performance. For this milestone, the tests were conducted using one sample image. Testing across different image resolutions and conducting more in-depth performance comparisons will be part of the final project (Milestone #3).
+The mid-project milestone focuses on implementing the three versions of the Sobel Edge Detection algorithm and conducting initial tests to check their performance. The implementations include Sequential C, Auto-Vectorized C, and AVX2 Assembly. The output images are compared pixel by pixel to check if the three implementations produce correct and comparable results. Preliminary execution-time measurements are also collected to assess their performance. For this milestone, the tests were conducted using one sample image. Testing across different image resolutions and conducting more in-depth performance comparisons will be part of the final project (Milestone #3).
 </p>
 
 ### Code Files
 - **Sequential_C_version.c** – Implements the Sobel Edge Detection algorithm in C by processing image pixels sequentially. It calculates the horizontal and vertical gradients to detect edges and serves as the baseline for performance comparisons.
-- **AutoVectorized_C_version.c** – Implements Sobel Edge Detection in C using compiler optimizations to encourage automatic vectorization. It allows the compiler to process multiple pixels at once and is tested against the sequential implementation for correctness and performance.
+- **AutoVectorized_C_version.c** – Implements Sobel Edge Detection in C using compiler optimizations to encourage automatic vectorization. It allows the compiler to process multiple pixels at once.
 - **AVX2_Assembly_version.asm** – Contains the initial assembly implementation of Sobel Edge Detection using AVX2 instructions and YMM registers to calculate the gradients of multiple pixels at once. Implementation will be further optimized in Milestone #3.
 
 ### Supporting Files
