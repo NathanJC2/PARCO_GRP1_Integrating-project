@@ -8,7 +8,7 @@
 
 ## Mid-Project Milestone
 <p align="justify">
-The mid-project milestone focuses on implementing the three versions of the Sobel Edge Detection algorithm and conducting initial tests to check their correctness and performance. The implementations include Sequential C, Auto-Vectorized C, and AVX2 Assembly. The output images are compared pixel by pixel to check if the three implementations produce correct and comparable results. Preliminary execution-time measurements are also collected to assess their performance. For this milestone, the tests were conducted using one sample image. Testing across different image resolutions will be conducted in the final project (Milestone #3).
+The mid-project milestone focuses on implementing the three versions of the Sobel Edge Detection algorithm and conducting initial tests to check their correctness and performance. The implementations include Sequential C, Auto-Vectorized C, and AVX2 Assembly. The output images are compared pixel by pixel to check if the three implementations produce correct and comparable results. Preliminary execution-time measurements are also collected to assess their performance. For this milestone, the tests were conducted using one sample image. Testing across different image resolutions and conducting more in-depth performance comparisons will be part of the final project (Milestone #3).
 </p>
 
 ### Code Files
