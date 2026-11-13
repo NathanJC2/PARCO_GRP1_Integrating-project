@@ -14,15 +14,13 @@ The mid-project milestone focuses on implementing the three versions of the Sobe
 </p>
 
 ### Code Files
-<p align="justify">
 - **Sequential_C_version.c** – Implements the Sobel Edge Detection algorithm in C by processing image pixels sequentially. It calculates the horizontal and vertical gradients to detect edges and serves as the baseline for performance comparisons.
-</p>
-2. **AutoVectorized_C_version.c** – Implements Sobel Edge Detection in C using compiler optimizations to encourage automatic vectorization. It allows the compiler to process multiple pixels at once and is tested against the sequential implementation for correctness and performance.
-3. **AVX2_Assembly_version.asm** – Contains the initial assembly implementation of Sobel Edge Detection using AVX2 instructions and YMM registers to calculate the gradients of multiple pixels at once. Implementation will be further optimized in Milestone #3.
+- **AutoVectorized_C_version.c** – Implements Sobel Edge Detection in C using compiler optimizations to encourage automatic vectorization. It allows the compiler to process multiple pixels at once and is tested against the sequential implementation for correctness and performance.
+- **AVX2_Assembly_version.asm** – Contains the initial assembly implementation of Sobel Edge Detection using AVX2 instructions and YMM registers to calculate the gradients of multiple pixels at once. Implementation will be further optimized in Milestone #3.
 
 ### Supporting Files
-4. **AVX2_C_driver.c** – Handles reading the input image, preparing the output buffer, calling the AVX2 assembly function, and saving the resulting image. It also measures execution time and calculates the average, median, and standard deviation of the benchmark results.
-5. **convert_images.c** – Prepares the sample images for testing by converting them into the required format (PGM) for the implementations.
+- **AVX2_C_driver.c** – Handles reading the input image, preparing the output buffer, calling the AVX2 assembly function, and saving the resulting image. It also measures execution time and calculates the average, median, and standard deviation of the benchmark results.
+- **convert_images.c** – Prepares the sample images for testing by converting them into the required format (PGM) for the implementations.
 
 ### Benchmarking
 <p align="justify">
