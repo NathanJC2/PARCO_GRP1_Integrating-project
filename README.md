@@ -30,22 +30,22 @@ Each implementation is tested over 30 benchmark runs, with the Sobel operation r
 ## Compilation and Execution
 
 ### Sequential C
-```
+```bash
 gcc -Wall -std=c99 -O3 -fno-tree-vectorize -fno-tree-slp-vectorize Sequential_C_version.c -o sequential.exe -lm
-.\sequential.exe
+./sequential.exe images/sample.pgm results/sample_sequential.pgm
 ```
 
 ### Auto-Vectorized C
-```
-gcc -Wall -std=c99 -O3 -march=native -ftree-vectorize "-fopt-info-vec-all=vectorization.txt" AutoVectorized_C_version.c -o autovectorized.exe -lm
-.\autovectorized.exe
+```bash
+gcc -Wall -std=c99 -O3 -march=native -ftree-vectorize -ffast-math "-fopt-info-vec-all=vectorization.txt" AutoVectorized_C_version.c -o autovectorized.exe -lm
+./autovectorized.exe images/sample.pgm results/sample_autovectorized.pgm
 ```
 
 ### AVX2 Assembly
-```
+```bash
 nasm -f win64 AVX2_Assembly_version.asm -o AVX2_Assembly_version.obj
 gcc -Wall -std=c99 -O3 AVX2_C_driver.c AVX2_Assembly_version.obj -o avx2.exe -lm
-.\avx2.exe images\sample.pgm results\sample_avx2.pgm
+./avx2.exe images/sample.pgm results/sample_avx2.pgm
 ```
 
 ## I. Abstract
