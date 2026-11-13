@@ -6,6 +6,8 @@
 - Ruiz, Joseph Benjamin
 - Tamayo, Chelsea Nichole
 
+Video link: https://drive.google.com/drive/folders/1mfhHtx5UtS8-gigl6woks9RYltI3uR_T?usp=sharing
+
 ## Mid-Project Milestone
 <p align="justify">
 The mid-project milestone focuses on implementing the three versions of the Sobel Edge Detection algorithm and conducting initial tests to check their correctness and performance. The implementations include Sequential C, Auto-Vectorized C, and AVX2 Assembly. The output images are compared pixel by pixel to check if the three implementations produce correct and comparable results. Preliminary execution-time measurements are also collected to assess their performance. For this milestone, the tests were conducted using one sample image. Testing across different image resolutions and conducting more in-depth performance comparisons will be part of the final project (Milestone #3).
@@ -19,6 +21,11 @@ The mid-project milestone focuses on implementing the three versions of the Sobe
 ### Supporting Files
 4. **AVX2_C_driver.c** – Handles reading the input image, preparing the output buffer, calling the AVX2 assembly function, and saving the resulting image. It also measures execution time and calculates the average, median, and standard deviation of the benchmark results.
 5. **convert_images.c** – Prepares the sample images for testing by converting them into the required format (PGM) for the implementations.
+
+### Benchmarking
+<p align="justify">
+Each implementation is tested over 30 benchmark runs, with the Sobel operation repeated 100 times per run. The average, median, and standard deviation are calculated to summarize the execution-time measurements.
+</p>
 
 ## Compilation and Execution
 
@@ -98,5 +105,3 @@ Jain, A., Namdev, A., & Chawla, M. (2016). Parallel edge detection by SOBEL algo
 Moukthika. (2025, May 6). Edge detection using OpenCV. OpenCV. https://opencv.org/edge-detection-using-opencv/ 
 
 Peng-O, T., & Chaikan, P. (2021). High performance and energy efficient sobel edge detection. Microprocessors and Microsystems, 87, 104368. https://doi.org/10.1016/j.micpro.2021.104368
-
-Video link: https://drive.google.com/drive/folders/1mfhHtx5UtS8-gigl6woks9RYltI3uR_T?usp=sharing
