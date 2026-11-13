@@ -21,6 +21,21 @@ The mid-project milestone focuses on implementing the three versions of the Sobe
 4. **AVX2_C_driver.c** – Handles reading the input image, preparing the output buffer, calling the AVX2 assembly function, and saving the resulting image. It also measures execution time and calculates the average, median, and standard deviation of the benchmark results.
 5. **convert_images.c** – Prepares the sample images for testing by converting them into the required format (PGM) for the implementations.
 
+## Compilation and Execution
+
+### Sequential C
+gcc -Wall -std=c99 -O3 -fno-tree-vectorize -fno-tree-slp-vectorize Sequential_C_version.c -o sequential.exe -lm
+.\sequential.exe
+
+### Auto-Vectorized C
+gcc -Wall -std=c99 -O3 -march=native -ftree-vectorize "-fopt-info-vec-all=vectorization.txt" AutoVectorized_C_version.c -o autovectorized.exe -lm
+.\autovectorized.exe
+
+### AVX2 Assembly
+nasm -f win64 AVX2_Assembly_version.asm -o AVX2_Assembly_version.obj
+gcc -Wall -std=c99 -O3 AVX2_C_driver.c AVX2_Assembly_version.obj -o avx2.exe -lm
+.\avx2.exe images\sample.pgm results\sample_avx2.pgm
+
 ## I. Abstract
 <p align="justify">
 Image filtering is a common operation in image processing and within the field of technology. Yet, it is not limited to just technology. Medical and industrial fields utilize this feature to reduce noise within images, clear and smooth out surroundings, and enhance visuals to perform optimally. However, applying filters to high-resolution images can involve substantial computational work due to the high amount of pixels needed to be processed. This process is usually done one at a time through sequential implementation, increasing the processing time as image resolution grows. This project aims to investigate the use of data-level parallelism to improve the performance of image filtering. <strong>The project will implement Sobel edge detection using three approaches: Sequential C, compiler-auto-vectorized C, and x86-64 AVX2 assembly</strong>. The performance of these implementations will be evaluated using images with different resolutions, with execution time and speedup serving as the primary metrics. <strong>The output images will also be compared pixel by pixel to check whether all three implementations produce the correct results</strong>. 
